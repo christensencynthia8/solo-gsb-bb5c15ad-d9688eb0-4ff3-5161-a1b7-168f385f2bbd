@@ -1,0 +1,10 @@
+services:
+  seating-api:
+    build: .
+    image: round-table-seating-api:latest
+    container_name: round-table-seating-api
+    ports:
+      - "${APP_PORT:-8000}:8000"
+    environment:
+      APP_LOG_LEVEL: ${APP_LOG_LEVEL:-info}
+    restart: unless-stopped
